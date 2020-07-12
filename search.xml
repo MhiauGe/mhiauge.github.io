@@ -9,6 +9,7 @@
 <h1 id="notion介绍"><a href="#notion介绍" class="headerlink" title="notion介绍"></a>notion介绍</h1><h3 id="什么是notion？"><a href="#什么是notion？" class="headerlink" title="什么是notion？"></a>什么是notion？</h3><p>笔记类的软件和应用有很多，从老牌的onenote、evernote，到国内的有道、为知等等……</p>
 <p>Notion算是国外一款比较新的ALL-IN-ONE笔记工具，可谓功能强大，界面美观。</p>
 <p><img src="https://www.helloimg.com/images/2020/07/11/_202007111522041b932bd55d276075.png" alt="_202007111522041b932bd55d276075.png"></p>
+<a id="more"></a> 
 <h3 id="我为什么放弃印象笔记选择notion？"><a href="#我为什么放弃印象笔记选择notion？" class="headerlink" title="我为什么放弃印象笔记选择notion？"></a>我为什么放弃印象笔记选择notion？</h3><p>​    纵然notion现在还有千般不好，比如必须fq，不能离线使用。但是其强大的设计理念，也就是block，已经深深让我着迷。block完全可以看做是面向对象编程的典型用例，一切皆对象。</p>
 <p>​    最重要的，notion已经不仅仅是一个笔记软件，其强大的扩展性可以花很长的时间去探索、发现。比如表格，在印象笔记中，表格已经做的很好了，在每个单元格中也可以插入诸如checkbox之类的高级控件，比国内如有道云笔记的表格功能好用太多，只不过印象笔记的windows客户端确实很丑。即便如此，印象笔记的表格功能和notion的表格相比，简直小巫见大巫，notion表格支持formula表达式，可以进行简单的编程，实现一些特殊应用， 比如进度条。而表格功能仅仅是notion几十种block中的一种。</p>
 <p>​    不论在界面美观度还是跨平台使用，比如linux<code>notion网页版有着和客户端几乎一致的体验</code>，notion都是不二选择。</p>
@@ -35,5 +36,8 @@
       <categories>
         <category>notion</category>
       </categories>
+      <tags>
+        <tag>notion</tag>
+      </tags>
   </entry>
 </search>
