@@ -3,11 +3,11 @@
   <title>Wind &amp; Leaf</title>
   
   
-  <link href="/blog/atom.xml" rel="self"/>
+  <link href="/mhiauge.github.io/atom.xml" rel="self"/>
   
-  <link href="http://xoysen.gitee.io/"/>
+  <link href="https://github.com/MhiauGe/mhiauge.github.io/"/>
   <updated>2020-07-12T09:28:22.231Z</updated>
-  <id>http://xoysen.gitee.io/</id>
+  <id>https://github.com/MhiauGe/mhiauge.github.io/</id>
   
   <author>
     <name>Patrick</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>notion添加pac自定义规则方法</title>
-    <link href="http://xoysen.gitee.io/2020/07/11/notion%E6%B7%BB%E5%8A%A0pac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E6%96%B9%E6%B3%95/"/>
-    <id>http://xoysen.gitee.io/2020/07/11/notion%E6%B7%BB%E5%8A%A0pac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E6%96%B9%E6%B3%95/</id>
+    <link href="https://github.com/MhiauGe/mhiauge.github.io/2020/07/11/notion%E6%B7%BB%E5%8A%A0pac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E6%96%B9%E6%B3%95/"/>
+    <id>https://github.com/MhiauGe/mhiauge.github.io/2020/07/11/notion%E6%B7%BB%E5%8A%A0pac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E6%96%B9%E6%B3%95/</id>
     <published>2020-07-11T06:13:40.000Z</published>
     <updated>2020-07-12T09:28:22.231Z</updated>
     
@@ -37,10 +37,10 @@
     </summary>
     
     
-      <category term="notion" scheme="http://xoysen.gitee.io/categories/notion/"/>
+      <category term="notion" scheme="https://github.com/MhiauGe/mhiauge.github.io/categories/notion/"/>
     
     
-      <category term="notion" scheme="http://xoysen.gitee.io/tags/notion/"/>
+      <category term="notion" scheme="https://github.com/MhiauGe/mhiauge.github.io/tags/notion/"/>
     
   </entry>
   
