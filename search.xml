@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>notion添加pac自定义规则方法</title>
+    <url>/blog/2020/07/11/notion%E6%B7%BB%E5%8A%A0pac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><ol>
+<li><strong>已fq</strong> （最近两个月，notion被GFW屏蔽，导致国内网络无法正常访问，所以要想有更好的体验，最好的办法还是fq）</li>
+</ol>
+<h1 id="notion介绍"><a href="#notion介绍" class="headerlink" title="notion介绍"></a>notion介绍</h1><h3 id="什么是notion？"><a href="#什么是notion？" class="headerlink" title="什么是notion？"></a>什么是notion？</h3><p>笔记类的软件和应用有很多，从老牌的onenote、evernote，到国内的有道、为知等等……</p>
+<p>Notion算是国外一款比较新的ALL-IN-ONE笔记工具，可谓功能强大，界面美观。</p>
+<p><img src="https://www.helloimg.com/images/2020/07/11/_202007111522041b932bd55d276075.png" alt="_202007111522041b932bd55d276075.png"></p>
+<h3 id="我为什么放弃印象笔记选择notion？"><a href="#我为什么放弃印象笔记选择notion？" class="headerlink" title="我为什么放弃印象笔记选择notion？"></a>我为什么放弃印象笔记选择notion？</h3><p>​    纵然notion现在还有千般不好，比如必须fq，不能离线使用。但是其强大的设计理念，也就是block，已经深深让我着迷。block完全可以看做是面向对象编程的典型用例，一切皆对象。</p>
+<p>​    最重要的，notion已经不仅仅是一个笔记软件，其强大的扩展性可以花很长的时间去探索、发现。比如表格，在印象笔记中，表格已经做的很好了，在每个单元格中也可以插入诸如checkbox之类的高级控件，比国内如有道云笔记的表格功能好用太多，只不过印象笔记的windows客户端确实很丑。即便如此，印象笔记的表格功能和notion的表格相比，简直小巫见大巫，notion表格支持formula表达式，可以进行简单的编程，实现一些特殊应用， 比如进度条。而表格功能仅仅是notion几十种block中的一种。</p>
+<p>​    不论在界面美观度还是跨平台使用，比如linux<code>notion网页版有着和客户端几乎一致的体验</code>，notion都是不二选择。</p>
+<h1 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h1><h2 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h2><p>我们都知道ss的windows客户端，可以直接编辑本地PAC文件，但是有人要问，PAC语法我又不会，怎么办呢?</p>
+<p>其实我们根本不需要知道PAC文件的语法， 只需要参考现有的网址是怎么写的，我们就怎么写。</p>
+<p>如果已经从GFWlist更新过本地PAC，那么看起来差不多是这样的<br><img src="https://www.helloimg.com/images/2020/07/11/_202007111443430e128f7fc07973c7.png" alt="_202007111443430e128f7fc07973c7.png"><br>可以看到图中已经有了notion相关网址，不过要注意的是我们<strong>最好不好直接编辑PAC.txt这个文件</strong>，因为只要每次从服务器更新，该文件就会被重置，我们应该编辑user-rule.txt这个文件，这个文件是专门用于用户自定义的。</p>
+<p>我们打开文件，写入：</p>
+<p><code>notion.so,
+||notion.so</code></p>
+<p>这样ss会在下次启动在PAC.txt中自动生成上图中的代码。</p>
+<h2 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h2><p>android版本的自定义规则语法和pc不一样，类似这样：</p>
+<p><code>(?:^|\.)1688\.com\.au$</code></p>
+<p>但其实我们直接使用和pc一样的语法也是可以的，类似这样：</p>
+<p><img src="https://www.helloimg.com/images/2020/07/11/_20200711145034b24ebf611a254ffa.jpg" alt="_20200711145034b24ebf611a254ffa.jpg"></p>
+<p>最后修改配置文件：路由选择”自定义规则”即可</p>
+<blockquote>
+<p>注1：要将notion.so和GFW合并，我们只需要先输入notion.so的网址，然后点击右上角加号图标，选择GFW列表即可增加。</p>
+</blockquote>
+<blockquote>
+<p>注2：网址一定要写notion.so,前面不要加www，不然你会发现虽然可以登录，但是不能同步,一直显示Saving..</p>
+</blockquote>
+<h1 id="扩展补充"><a href="#扩展补充" class="headerlink" title="扩展补充"></a>扩展补充</h1><p>另外，提供一个notion中文网站：<a href="https://linmi.cc/notiongroup" target="_blank" rel="noopener">notion中文社区</a>, 里面有一些很有意思的notion应用</p>
+]]></content>
+      <categories>
+        <category>notion</category>
+      </categories>
+  </entry>
+</search>
