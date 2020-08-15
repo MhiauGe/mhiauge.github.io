@@ -6,7 +6,7 @@
   <link href="/mhiauge.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/MhiauGe/mhiauge.github.io/"/>
-  <updated>2020-07-12T09:28:22.231Z</updated>
+  <updated>2020-08-15T05:50:01.342Z</updated>
   <id>https://github.com/MhiauGe/mhiauge.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UOS安装qt开发环境</title>
+    <link href="https://github.com/MhiauGe/mhiauge.github.io/2020/08/15/UOS%E5%AE%89%E8%A3%85qt%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>https://github.com/MhiauGe/mhiauge.github.io/2020/08/15/UOS%E5%AE%89%E8%A3%85qt%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</id>
+    <published>2020-08-15T05:47:09.000Z</published>
+    <updated>2020-08-15T05:50:01.342Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install qtcreator     //安装Craetor IDE</span><br><span class="line">sudo apt install qt5-default   //安装qt的配置</span><br><span class="line">sudo apt install libdtkwidget-dev  //安装dtk开发所需要环境</span><br><span class="line">//也可以将上面的合成一个命令</span><br><span class="line">sudo apt install libdtkwidget-dev qt5-default qtcreator</span><br><span class="line">sudo apt <span class="built_in">source</span> qt5-default    //qt源码包，此会安装在当前所处目录下，建议更换目录再执行，推荐放在</span><br><span class="line"></span><br><span class="line">//==============================================================</span><br><span class="line"></span><br><span class="line">// 编译可能还需要安装一些依赖</span><br><span class="line">sudo apt-get install qtdeclarative5-dev qtbase5-private-dev libqt5websockets5-dev libqt5webkit5-dev libxv-dev libglew-dev libasound2-dev librtmp-dev libpoppler-dev libpoppler-qt5-dev librtmp-dev libdframeworkdbus-dev qtwebengine5-dev qtpositioning5-dev libssl-dev libcurl4-openssl-dev libcap-dev libfmt-dev libspdlog-dev libpoppler-dev libpoppler-qt5-dev librtmp-dev</span><br><span class="line"></span><br><span class="line">poppler找不到</span><br><span class="line">sudo apt install libpoppler-dev</span><br><span class="line">sudo apt-get install libpoppler-qt5-dev</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">rtmp找不到</span><br><span class="line">sudo apt install librtmp-dev</span><br></pre></td></tr></table></figure><p>集合成一个命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install qtcreator qt5-default libdtkwidget-dev qtdeclarative5-dev qtbase5-private-dev libqt5websockets5-dev libqt5webkit5-dev libxv-dev libglew-dev libasound2-dev librtmp-dev libpoppler-dev libpoppler-qt5-dev librtmp-dev libdframeworkdbus-dev qtwebengine5-dev qtpositioning5-dev libssl-dev libcurl4-openssl-dev libcap-dev libfmt-dev libspdlog-dev libpoppler-dev libpoppler-qt5-dev librtmp-dev</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=
+      
+    
+    </summary>
+    
+    
+      <category term="qt" scheme="https://github.com/MhiauGe/mhiauge.github.io/categories/qt/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>notion添加pac自定义规则方法</title>
