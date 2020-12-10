@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://www.helloimg.com/images/2020/07/11/_202007111443430e128f7fc07973c7.png">
 <meta property="og:image" content="https://www.helloimg.com/images/2020/07/11/_20200711145034b24ebf611a254ffa.jpg">
 <meta property="article:published_time" content="2020-07-11T06:13:40.000Z">
-<meta property="article:modified_time" content="2020-09-03T16:41:25.462Z">
+<meta property="article:modified_time" content="2020-09-03T16:41:25.000Z">
 <meta property="article:author" content="Patrick">
 <meta property="article:tag" content="notion">
 <meta name="twitter:card" content="summary">
@@ -285,7 +285,7 @@
 <blockquote>
 <p>注2：网址一定要写notion.so,前面不要加www，不然你会发现虽然可以登录，但是不能同步,一直显示Saving..</p>
 </blockquote>
-<h1 id="扩展补充"><a href="#扩展补充" class="headerlink" title="扩展补充"></a>扩展补充</h1><p>另外，提供一个notion中文网站：<a href="https://linmi.cc/notiongroup" target="_blank" rel="noopener">notion中文社区</a>, 里面有一些很有意思的notion应用</p>
+<h1 id="扩展补充"><a href="#扩展补充" class="headerlink" title="扩展补充"></a>扩展补充</h1><p>另外，提供一个notion中文网站：<a target="_blank" rel="noopener" href="https://linmi.cc/notiongroup">notion中文社区</a>, 里面有一些很有意思的notion应用</p>
 
     </div>
 
@@ -320,8 +320,12 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MzA4Ny8xOTYzMw=="></div>
+  </div>
+  
 
-<% if(theme.gitment.enable) { %>
 <div id="gitment_title" class="gitment_title"></div>
 <div id="container" style="display:none"></div>
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -359,7 +363,6 @@
 
   showGitment();
 </script>
-<% } %>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -560,6 +563,22 @@
   
 
   
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>

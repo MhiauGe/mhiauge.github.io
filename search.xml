@@ -82,7 +82,7 @@
 
 
 <p>集合成一个命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install qtcreator qt5-default libdtkwidget-dev qtdeclarative5-dev qtbase5-private-dev libqt5websockets5-dev libqt5webkit5-dev libxv-dev libglew-dev libasound2-dev librtmp-dev libpoppler-dev libpoppler-qt5-dev librtmp-dev libdframeworkdbus-dev qtwebengine5-dev qtpositioning5-dev libssl-dev libcurl4-openssl-dev libcap-dev libfmt-dev libspdlog-dev libpoppler-dev libpoppler-qt5-dev librtmp-dev</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install qtcreator qt5-default libdtkwidget-dev qtdeclarative5-dev qtbase5-private-dev libqt5websockets5-dev libqt5webkit5-dev libxv-dev libglew-dev libasound2-dev librtmp-dev libpoppler-dev libpoppler-qt5-dev librtmp-dev libdframeworkdbus-dev qtwebengine5-dev qtpositioning5-dev libssl-dev libcurl4-openssl-dev libcap-dev libfmt-dev libspdlog-dev libpoppler-dev libpoppler-qt5-dev librtmp-dev</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>qt</category>
       </categories>
@@ -118,7 +118,7 @@
 <blockquote>
 <p>注2：网址一定要写notion.so,前面不要加www，不然你会发现虽然可以登录，但是不能同步,一直显示Saving..</p>
 </blockquote>
-<h1 id="扩展补充"><a href="#扩展补充" class="headerlink" title="扩展补充"></a>扩展补充</h1><p>另外，提供一个notion中文网站：<a href="https://linmi.cc/notiongroup" target="_blank" rel="noopener">notion中文社区</a>, 里面有一些很有意思的notion应用</p>
+<h1 id="扩展补充"><a href="#扩展补充" class="headerlink" title="扩展补充"></a>扩展补充</h1><p>另外，提供一个notion中文网站：<a href="https://linmi.cc/notiongroup">notion中文社区</a>, 里面有一些很有意思的notion应用</p>
 ]]></content>
       <categories>
         <category>notion</category>

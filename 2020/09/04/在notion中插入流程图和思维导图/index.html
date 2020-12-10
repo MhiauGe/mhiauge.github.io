@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://www.helloimg.com/images/2020/09/04/WX20200901-1833282x2bc2323fd9966ff9.png">
 <meta property="og:image" content="https://www.helloimg.com/images/2020/09/04/WX20200901-1833562x03ce9811db1fb9fd.png">
 <meta property="article:published_time" content="2020-09-03T16:10:37.000Z">
-<meta property="article:modified_time" content="2020-09-03T16:44:02.336Z">
+<meta property="article:modified_time" content="2020-09-03T16:44:02.000Z">
 <meta property="article:author" content="Patrick">
 <meta property="article:tag" content="notion">
 <meta name="twitter:card" content="summary">
@@ -295,8 +295,12 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MzA4Ny8xOTYzMw=="></div>
+  </div>
+  
 
-<% if(theme.gitment.enable) { %>
 <div id="gitment_title" class="gitment_title"></div>
 <div id="container" style="display:none"></div>
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -334,7 +338,6 @@
 
   showGitment();
 </script>
-<% } %>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -534,6 +537,22 @@
   
 
   
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>
