@@ -236,6 +236,20 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/mhiauge.github.io/2020/08/15/UOS%E5%AE%89%E8%A3%85qt%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/mhiauge.github.io/2020/08/15/UOS%E5%AE%89%E8%A3%85qt%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -284,49 +298,8 @@
 
           </div>
           
-    
-  <div class="comments">
-    <div id="lv-container" data-id="city" data-uid="MTAyMC80MzA4Ny8xOTYzMw=="></div>
-  </div>
-  
+    <div class="comments" id="valine-comments"></div>
 
-<div id="gitment_title" class="gitment_title"></div>
-<div id="container" style="display:none"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
-  const myTheme = {
-    render(state, instance) {
-      const container = document.createElement('div');
-      container.lang = "en-US";
-      container.className = 'gitment-container gitment-root-container';
-      container.appendChild(instance.renderHeader(state, instance));
-      container.appendChild(instance.renderEditor(state, instance));
-      container.appendChild(instance.renderComments(state, instance));
-      container.appendChild(instance.renderFooter(state, instance));
-      return container;
-    }
-  }
-
-  function showGitment() {
-    $("#gitment_title").attr("style", "display:none");
-    $("#container").attr("style", "").addClass("gitment_container");
-    var gitment = new Gitment({
-      id: decodeURI(window.location.pathname),
-      theme: myTheme,
-      owner: 'mhiauge',
-      repo: 'mhiauge.github.io',
-      oauth: {
-        client_id: 'e7ad06a8a3f569d57f1f',
-        client_secret: '194088b1ebfa1d98f68f1831a13b24b95530f95f'
-      }
-    });
-    gitment.render('container');
-  }
-
-  showGitment();
-</script>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -527,19 +500,32 @@
 
   
 
+
 <script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'H9Cx05jCb9gD14gS4UhvxxxK-gzGzoHsz',
+      appKey     : 'arucp9IRCPWo7IqB3YCWKfp1',
+      placeholder: "来啊，快活啊！",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
 });
 </script>
 
