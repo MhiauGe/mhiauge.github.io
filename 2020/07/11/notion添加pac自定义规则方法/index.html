@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/mhiauge.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/mhiauge.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/mhiauge.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/mhiauge.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/mhiauge.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/mhiauge.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/mhiauge.github.io/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="前提 已fq （最近两个月，notion被GFW屏蔽，导致国内网络无法正常访问，所以要想有更好的体验，最好的办法还是fq）  notion介绍什么是notion？笔记类的软件和应用有很多，从老牌的onenote、evernote，到国内的有道、为知等等…… Notion算是国外一款比较新的ALL-IN-ONE笔记工具，可谓功能强大，界面美观。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="notion添加pac自定义规则方法">
+<meta property="og:url" content="https://github.com/MhiauGe/mhiauge.github.io/2020/07/11/notion%E6%B7%BB%E5%8A%A0pac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="程程❤小鱼">
+<meta property="og:description" content="前提 已fq （最近两个月，notion被GFW屏蔽，导致国内网络无法正常访问，所以要想有更好的体验，最好的办法还是fq）  notion介绍什么是notion？笔记类的软件和应用有很多，从老牌的onenote、evernote，到国内的有道、为知等等…… Notion算是国外一款比较新的ALL-IN-ONE笔记工具，可谓功能强大，界面美观。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.helloimg.com/images/2020/07/11/_202007111522041b932bd55d276075.png">
+<meta property="og:image" content="https://www.helloimg.com/images/2020/07/11/_202007111443430e128f7fc07973c7.png">
+<meta property="og:image" content="https://www.helloimg.com/images/2020/07/11/_20200711145034b24ebf611a254ffa.jpg">
+<meta property="article:published_time" content="2020-07-11T06:13:40.000Z">
+<meta property="article:modified_time" content="2020-12-15T11:20:16.591Z">
+<meta property="article:author" content="Patrick">
+<meta property="article:tag" content="notion">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.helloimg.com/images/2020/07/11/_202007111522041b932bd55d276075.png">
+
+<link rel="canonical" href="https://github.com/MhiauGe/mhiauge.github.io/2020/07/11/notion%E6%B7%BB%E5%8A%A0pac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E6%96%B9%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>notion添加pac自定义规则方法 | 程程❤小鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/mhiauge.github.io/atom.xml" title="程程❤小鱼" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/mhiauge.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">程程❤小鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/mhiauge.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/mhiauge.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/mhiauge.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/mhiauge.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MhiauGe/mhiauge.github.io/2020/07/11/notion%E6%B7%BB%E5%8A%A0pac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://www.helloimg.com/images/2020/07/12/695703fdjw8f17f8gl763j20ro0rpwho5219ea03a614db18.jpg">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="程程❤小鱼">
+    </span>
+      <header class="post-header">
+
+      
+
+        <h1 class="post-title" itemprop="name headline">
+          notion添加pac自定义规则方法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-11 14:13:40" itemprop="dateCreated datePublished" datetime="2020-07-11T14:13:40+08:00">2020-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-15 19:20:16" itemprop="dateModified" datetime="2020-12-15T19:20:16+08:00">2020-12-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/mhiauge.github.io/categories/notion/" itemprop="url" rel="index"><span itemprop="name">notion</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/mhiauge.github.io/2020/07/11/notion%E6%B7%BB%E5%8A%A0pac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E6%96%B9%E6%B3%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/mhiauge.github.io/2020/07/11/notion%E6%B7%BB%E5%8A%A0pac%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E6%96%B9%E6%B3%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><ol>
+<li><strong>已fq</strong> （最近两个月，notion被GFW屏蔽，导致国内网络无法正常访问，所以要想有更好的体验，最好的办法还是fq）</li>
+</ol>
+<h1 id="notion介绍"><a href="#notion介绍" class="headerlink" title="notion介绍"></a>notion介绍</h1><h3 id="什么是notion？"><a href="#什么是notion？" class="headerlink" title="什么是notion？"></a>什么是notion？</h3><p>笔记类的软件和应用有很多，从老牌的onenote、evernote，到国内的有道、为知等等……</p>
+<p>Notion算是国外一款比较新的ALL-IN-ONE笔记工具，可谓功能强大，界面美观。</p>
+<p><img src="https://www.helloimg.com/images/2020/07/11/_202007111522041b932bd55d276075.png" alt="_202007111522041b932bd55d276075.png"></p>
+<hr>
+<a id="more"></a> 
+
+<h3 id="我为什么放弃印象笔记选择notion？"><a href="#我为什么放弃印象笔记选择notion？" class="headerlink" title="我为什么放弃印象笔记选择notion？"></a>我为什么放弃印象笔记选择notion？</h3><p>​    纵然notion现在还有千般不好，比如必须fq，不能离线使用。但是其强大的设计理念，也就是block，已经深深让我着迷。block完全可以看做是面向对象编程的典型用例，一切皆对象。</p>
+<p>​    最重要的，notion已经不仅仅是一个笔记软件，其强大的扩展性可以花很长的时间去探索、发现。比如表格，在印象笔记中，表格已经做的很好了，在每个单元格中也可以插入诸如checkbox之类的高级控件，比国内如有道云笔记的表格功能好用太多，只不过印象笔记的windows客户端确实很丑。即便如此，印象笔记的表格功能和notion的表格相比，简直小巫见大巫，notion表格支持formula表达式，可以进行简单的编程，实现一些特殊应用， 比如进度条。而表格功能仅仅是notion几十种block中的一种。</p>
+<p>​    不论在界面美观度还是跨平台使用，比如linux<code>notion网页版有着和客户端几乎一致的体验</code>，notion都是不二选择。</p>
+<h1 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h1><h2 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h2><p>我们都知道ss的windows客户端，可以直接编辑本地PAC文件，但是有人要问，PAC语法我又不会，怎么办呢?</p>
+<p>其实我们根本不需要知道PAC文件的语法， 只需要参考现有的网址是怎么写的，我们就怎么写。</p>
+<p>如果已经从GFWlist更新过本地PAC，那么看起来差不多是这样的<br><img src="https://www.helloimg.com/images/2020/07/11/_202007111443430e128f7fc07973c7.png" alt="_202007111443430e128f7fc07973c7.png"><br>可以看到图中已经有了notion相关网址，不过要注意的是我们<strong>最好不好直接编辑PAC.txt这个文件</strong>，因为只要每次从服务器更新，该文件就会被重置，我们应该编辑user-rule.txt这个文件，这个文件是专门用于用户自定义的。</p>
+<p>我们打开文件，写入：</p>
+<p><code>notion.so,
+||notion.so</code></p>
+<p>这样ss会在下次启动在PAC.txt中自动生成上图中的代码。</p>
+<h2 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h2><p>android版本的自定义规则语法和pc不一样，类似这样：</p>
+<p><code>(?:^|\.)1688\.com\.au$</code></p>
+<p>但其实我们直接使用和pc一样的语法也是可以的，类似这样：</p>
+<p><img src="https://www.helloimg.com/images/2020/07/11/_20200711145034b24ebf611a254ffa.jpg" alt="_20200711145034b24ebf611a254ffa.jpg"></p>
+<p>最后修改配置文件：路由选择”自定义规则”即可</p>
+<blockquote>
+<p>注1：要将notion.so和GFW合并，我们只需要先输入notion.so的网址，然后点击右上角加号图标，选择GFW列表即可增加。</p>
+</blockquote>
+<blockquote>
+<p>注2：网址一定要写notion.so,前面不要加www，不然你会发现虽然可以登录，但是不能同步,一直显示Saving..</p>
+</blockquote>
+<h1 id="扩展补充"><a href="#扩展补充" class="headerlink" title="扩展补充"></a>扩展补充</h1><p>另外，提供一个notion中文网站：<a target="_blank" rel="noopener" href="https://linmi.cc/notiongroup">notion中文社区</a>, 里面有一些很有意思的notion应用</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/mhiauge.github.io/tags/notion/" rel="tag"># notion</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/mhiauge.github.io/2020/08/15/UOS%E5%AE%89%E8%A3%85qt%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" rel="next" title="UOS安装qt开发环境">
+      UOS安装qt开发环境 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E6%8F%90"><span class="nav-number">1.</span> <span class="nav-text">前提</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#notion%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text">notion介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFnotion%EF%BC%9F"><span class="nav-number">2.0.1.</span> <span class="nav-text">什么是notion？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E6%94%BE%E5%BC%83%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0%E9%80%89%E6%8B%A9notion%EF%BC%9F"><span class="nav-number">2.0.2.</span> <span class="nav-text">我为什么放弃印象笔记选择notion？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">具体操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">Windows：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android%EF%BC%9A"><span class="nav-number">3.2.</span> <span class="nav-text">Android：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E8%A1%A5%E5%85%85"><span class="nav-number">4.</span> <span class="nav-text">扩展补充</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Patrick"
+      src="https://www.helloimg.com/images/2020/07/12/695703fdjw8f17f8gl763j20ro0rpwho5219ea03a614db18.jpg">
+  <p class="site-author-name" itemprop="name">Patrick</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/mhiauge.github.io/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/mhiauge.github.io/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/mhiauge.github.io/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MhiauGe" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MhiauGe"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Patrick</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+ -->
+
+ <div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共3.2k字</span>
+</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/mhiauge.github.io/lib/anime.min.js"></script>
+  <script src="/mhiauge.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/mhiauge.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/mhiauge.github.io/js/utils.js"></script>
+
+<script src="/mhiauge.github.io/js/motion.js"></script>
+
+
+<script src="/mhiauge.github.io/js/schemes/muse.js"></script>
+
+
+<script src="/mhiauge.github.io/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/mhiauge.github.io/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'H9Cx05jCb9gD14gS4UhvxxxK-gzGzoHsz',
+      appKey     : 'arucp9IRCPWo7IqB3YCWKfp1',
+      placeholder: "来啊，快活啊！",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
